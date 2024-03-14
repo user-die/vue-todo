@@ -2,15 +2,17 @@
   <div class="task-list">
     <div>
       <h2>Список задач</h2>
-      <task-item
-        v-for="task in todoList"
-        :task="task"
-        :type="state.type"
-        :key="task.id"
-        @toggleComplete="$emit('toggleComplete', task)"
-        @remove="$emit('remove', task)"
-        @rename="$emit('rename', task)"
-      ></task-item>
+      <transition-group name="taskItem">
+        <task-item
+          v-for="task in todoList"
+          :task="task"
+          :type="state.type"
+          :key="task.id"
+          @toggleComplete="$emit('toggleComplete', task)"
+          @remove="$emit('remove', task)"
+          @rename="$emit('rename', task)"
+        ></task-item>
+      </transition-group>
     </div>
 
     <div>
@@ -73,5 +75,14 @@ export default {
     background-color: #7b7bff;
     margin-right: 10px;
   }
+}
+
+.taskItem-enter-active,
+.taskItem-leave-active {
+  transition: opacity 0.3s;
+}
+.taskItem-enter-from,
+.taskItem-leave-to {
+  opacity: 0;
 }
 </style>
