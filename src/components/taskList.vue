@@ -62,6 +62,7 @@ export default {
   justify-content: space-between;
   gap: 10px;
   flex-grow: 1;
+  width: 1000px;
 
   h2 {
     text-align: center;

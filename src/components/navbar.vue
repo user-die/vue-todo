@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav style="display: flex; justify-content: center">
     <button @click="$router.push('/')">Todo</button>
     <button @click="$router.push('/posts')">Posts</button>
   </nav>

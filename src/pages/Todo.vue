@@ -1,12 +1,14 @@
 <template>
-  <navbar />
-  <task-form @create="addTask" />
-  <task-list
-    :todoList="todoList"
-    @remove="removeTask"
-    @toggleComplete="toggleComplete"
-    @rename="renameTask"
-  />
+  <div class="todo-page">
+    <navbar />
+    <task-form @create="addTask" />
+    <task-list
+      :todoList="todoList"
+      @remove="removeTask"
+      @toggleComplete="toggleComplete"
+      @rename="renameTask"
+    />
+  </div>
 </template>
 
 <script>
@@ -50,20 +52,7 @@ export default {
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  color: white;
-  background-color: #09161c;
-  height: 100%;
-}
-
-#app {
+.todo-page {
   height: 85%;
   width: 80%;
   margin: 0 auto;
